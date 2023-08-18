@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Comic Sans MS;
+    box-sizing: border-box;
+  }
+  body {color:#df4f30;
+    height: 100vh;flex-direction: column;
+    display: flex;
+    background:#ff4a4a;
+    max-width: 1440px;
+    margin: auto;
+  }
+  .loss-text{ 
+    color: #6169a0;
+  }
+  .winn-game, .lose-game {
+    display: none;    
+    align-items: center;
+    font-size: 29px;
+  }
+  .shown {display: flex;}
+  .icon {width: 52px;
+    margin-right: 20px;
+  }
+  .victory-text{
+   color:#df4f30;
+  }
+  .board-game { 
+    font-size: 29px;
+    width: 85%;    
+    height: 135px;
+    background: white;
+    border-radius: 8px;
+    padding: 34px 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;  
+} 
+  .game-result {
+    background-color: #ffffffc7;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 35%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+} 
+  .controls{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+}
+  .timer {
+    font-size: 29px;
+    display: flex;
+    margin-right: auto;
+    margin-left: 20px;
+  }
+  .start-button{
+  background: #ff7851;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 8px;
+  margin: 0px 60px 0px 25px;
+  border: none; 
+}
+  .memory-game {
+    width: 85%;
+    perspective: 1000px;/*отвечает за расстояние между объектом и пользователем в z-плоскости*/
+    margin: auto;
+    gap: 15px;
+    width: 85%;
+    margin: auto;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    display: grid;
+  }
+ 
+  .memory-card {
+    width: auto;
+    height: 180px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;/* 3D-пространство*/
+    transition: transform .3s;
+  }
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    background: #ffb39d;
+  }
+  .front-face {
+    background: #06cfcf;;
+  }
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  button {
+    cursor: pointer;
+}
+  .disabled {
+    background-color: grey;
+    color: #ffffff;
+}
+@media (max-width:1024px){
+  .memory-game{
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+ } 
+}
