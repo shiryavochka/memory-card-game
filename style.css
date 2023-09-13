@@ -118,8 +118,27 @@
     background-color: grey;
     color: #ffffff;
 }
+@media (min-width:1024px){
+
+  .memory-game {
+    margin-top: 40px;
+  }
+}
+@media (min-width:1227px) and (max-width:1024px){
+  
+
+  .memory-card {
+    width: 143px;
+    height: 148px;
+  }
+}
+
 @media (max-width:1024px){
   .memory-game{
+    margin-top: 35px;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
  } 
+ .memory-card{
+  height: 205px;
+ }
 }
